@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Bank</title>
+  <style>
+    /*  body is used for basic styling of page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    /* created a cotainer for context  */
+    .container {
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      width: 300px;
+      margin: auto;
+    }
+
+    /* Heading text */
+    h2 {
+      color: black;
+    }
+
+    /* Balance Text */
+    #balance {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    /* Input Box */
+    input {
+      padding: 8px;
+      width: 90%;
+      margin-bottom: 10px;
+    }
+
+    /* Button Style */
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    /* Message Text */
+    #message {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>My Simple Bank</h2>
+
+    <!-- to show balance  -->
+    <p>Balance: ₹<span id="balance">0.00</span></p>
+
+    <!-- to add money to the account  -->
+    <input type="number" id="amount" placeholder="Enter amount"><br>
+
+    <!-- deposit and withdraw button -->
+    <button onclick="deposit()">Deposit</button>
+    <button onclick="withdraw()">Withdraw</button>
+
+    <!-- to display message -->
+    <p id="message"></p>
+  </div>
+
+  <script>
+    // initialising balance
+    let balance = 0;
+
+    //functio to deposit/add money to the account 
+    function deposit() {
+      let amount = parseFloat(document.getElementById("amount").value);
+      if (amount > 0) {
+        balance += amount;
+        document.getElementById("balance").textContent = balance.toFixed(2);
+        document.getElementById("message").textContent = "Deposited ₹" + amount.toFixed(2);
+      } else {
+        document.getElementById("message").textContent = "Enter a valid amount";
+      }
+    }
+
+    // function to withdaw money form the account 
+    function withdraw() {
+      let amount = parseFloat(document.getElementById("amount").value);
+      if (amount > 0) {
+        if (amount <= balance) {
+          balance -= amount;
+          document.getElementById("balance").textContent = balance.toFixed(2);
+          document.getElementById("message").textContent = "Withdrew ₹" + amount.toFixed(2);
+        } else {
+          document.getElementById("message").textContent = "Not enough balance";
+        }
+      } else {
+        document.getElementById("message").textContent = "Enter a valid amount";
+      }
+    }
+  </script>
+
+</body>
+</html>
