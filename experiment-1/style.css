@@ -1,0 +1,7 @@
+form{
+    background-color: rgb(238, 241, 242);
+    width: 300px;
+    height: 300px;
+    border: 15px ridge black;
+    border-radius: 10px;
+}
