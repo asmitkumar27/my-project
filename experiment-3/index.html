@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            :root {
+               --bg-color-header: rgb(56, 201, 56);
+               --bg-color-footer: rgb(56, 201, 56); 
+               --bg-color-nav:rgb(113, 111, 111);  
+               --bg-color-main: white;
+            }
+            input:checked ~ .dashboard {
+               --bg-color-header: rgb(113, 111, 111);  
+               --bg-color-footer: rgb(113, 111, 111);  
+               --bg-color-nav:rgb(244, 236, 236);  
+               --bg-color-main: rgb(40, 39, 39);  
+            }
+            div {
+               display:grid;
+               grid-template-columns: 200px auto; 
+               grid-template-rows: 150px auto 100px;
+               height: 100vh;
+            }
+            header{
+                display:flex;
+                justify-content: space-between;
+                border: 1px solid black;
+                grid-column: 1 / span 2;
+                padding: 10px;
+                background: var(--bg-color-header);
+            }
+            nav{
+                border: 1px solid black;
+                background:var(--bg-color-nav);
+            }
+            main{
+                border: 1px solid black;
+                background-color: 1px solid var(--bg-color-main);
+            }
+            footer{
+                border: 1px solid black;               
+                grid-column: 1 / span 2;
+                padding: 10px;
+                background: var(--bg-color-footer);;
+                text-align: center;
+            }
+            #theme-switch {
+                display:none;
+            }
+        </style>    
+    </head>
+    <body>
+        <input type="checkbox" id="theme-switch">
+        <div class="dashboard">    
+            <header>
+                <h1> Admin Dashboard </h1>
+                <label for="theme-switch">Dark Mode<label>    
+            </header>
+            <nav>
+                <p>Home</p>
+                <P>Users</P>
+                <p>Settings</p>
+            </nav>
+            <main>
+                    <b>Welcome,Admin!</b>
+                    This is the main content area.Add charts,tables,or reports here.
+            </main>    
+            <footer>
+                <h5>© 2025 Admin Panel</h5>
+            </footer>
+        </div>
+    </body>
+    </html>
