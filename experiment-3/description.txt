@@ -1,0 +1,143 @@
+1. Theme Switch (Light/Dark Mode)
+Function:
+A toggle (checkbox) lets the user swap between Light Mode (default) and Dark Mode.
+
+Verification Points:
+
+Light Mode (default view):
+
+Header & Footer: Green (rgb(56, 201, 56))
+
+Navigation panel: Medium gray (rgb(113, 111, 111))
+
+Main section: White
+
+Dark Mode (when toggle is ON):
+
+Header & Footer: Dark gray (rgb(113, 111, 111))
+
+Navigation panel: Light gray (rgb(244, 236, 236))
+
+Main section: Very dark gray (rgb(40, 39, 39))
+
+Pass Criteria:
+
+Clicking the “Dark Mode” label instantly changes all theme colors to match the mode.
+
+Visual update is immediate and accurate.
+
+Fail Criteria:
+
+Clicking anywhere except the label doesn’t change the mode.
+
+Layout breaks or colors don’t update.
+
+2. Layout & Screen Adaptability
+Function:
+Layout is built using CSS Grid with:
+
+Left column: Navigation (fixed width of 200px)
+
+Right column: Main content (flexible width)
+
+Top row: Header (150px height, spans both columns)
+
+Bottom row: Footer (100px height, spans both columns)
+
+Pass Criteria:
+
+Navigation stays on the left, main content fills the remaining space.
+
+Header & Footer stretch across the screen evenly.
+
+Structure remains intact when the window is resized.
+
+Fail Criteria:
+
+Navigation overlaps the main section.
+
+Header/Footer lose alignment on resize.
+
+3. Sidebar Navigation Links
+Function:
+Vertical list of links (“Home”, “Users”, “Settings”).
+
+Pass Criteria:
+
+All links are visible in both themes.
+
+Sidebar background color updates with theme change.
+
+Fail Criteria:
+
+Any link is missing, clipped, or unreadable.
+
+Sidebar background remains unchanged after toggling.
+
+4. Main Content Panel
+Function:
+Displays a welcome message (“Welcome, Admin!”) plus placeholder space for charts, reports, etc.
+
+Pass Criteria:
+
+Text is clearly visible in both themes.
+
+Content area resizes smoothly with the window.
+
+Fail Criteria:
+
+Background color doesn’t change after theme switch.
+
+Text gets hidden or overflows outside the grid.
+
+CSS Styling Notes
+Theme Variables
+Defined in :root for easy color management.
+
+Light Mode (default):
+
+Header/Footer: Green
+
+Navigation: Gray
+
+Main section: White
+
+Dark Mode (when checkbox is checked):
+
+Header/Footer: Dark gray
+
+Navigation: Light gray
+
+Main section: Very dark gray
+
+Header
+Uses flexbox to position title and toggle.
+
+Color changes based on theme variables.
+
+Sidebar (Navigation)
+Fixed position on the left.
+
+Background color switches with theme.
+
+Main Content
+Holds primary dashboard information.
+
+Footer
+Full-width at bottom.
+
+Centered text.
+
+Color changes with theme variables.
+
+Theme Toggle (Hidden Checkbox)
+The checkbox itself is invisible; the label triggers the theme change.
+
+Skills You’ll Practice
+Creating responsive layouts with CSS Grid.
+
+Implementing theme changes using CSS variables.
+
+Designing UI test cases to validate features.
+
+Detecting and correcting CSS issues.
